@@ -10,11 +10,12 @@ import UIKit
 
 class TodoTableViewController: UITableViewController {
 
-    let itemsArray = ["Buy eggs", "Walk cats", "Dig bunker"]
+    var itemsArray = ["Buy eggs", "Walk cats", "Dig bunker"] {
+        didSet { self.tableView.reloadData() }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     // MARK: - Datasource methods
@@ -41,6 +42,27 @@ class TodoTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
+    
+    // MARK: - Add new items
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        var textField: UITextField = UITextField()
+        
+        let alert = UIAlertController(title: "Add new ToDo Item", message: "", preferredStyle: .alert)
+
+        let action = UIAlertAction(title: "Add Item", style: .default) { action in
+            self.itemsArray.append(textField.text!)
+        }
+        
+        alert.addTextField { alertTextField in
+            alertTextField.placeholder = "Create new item"
+            textField = alertTextField
+        }
+        alert.addAction(action)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
     
 
 
