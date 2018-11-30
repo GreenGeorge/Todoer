@@ -10,12 +10,21 @@ import UIKit
 
 class TodoTableViewController: UITableViewController {
 
-    var itemsArray = ["Buy eggs", "Walk cats", "Dig bunker"] {
-        didSet { self.tableView.reloadData() }
+    var itemsArray: [String] = [] {
+        didSet {
+            self.defaults.set(self.itemsArray, forKey: "TodoListArray")
+            self.tableView.reloadData()
+        }
     }
+    
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let items = self.defaults.array(forKey: "TodoListArray") as? [String] {
+            itemsArray = items
+        }
     }
     
     // MARK: - Datasource methods
