@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Todoer-->
+        <!--Items-->
         <scene sceneID="P9h-Op-dgj">
             <objects>
                 <tableViewController id="zSO-QD-ZJp" customClass="TodoTableViewController" customModule="Todoer" customModuleProvider="target" sceneMemberID="viewController">
@@ -40,7 +40,7 @@
                             <outlet property="delegate" destination="zSO-QD-ZJp" id="Zfm-yg-3YP"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Todoer" id="ph6-GE-aba">
+                    <navigationItem key="navigationItem" title="Items" id="ph6-GE-aba">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="HSU-gg-9nf">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
@@ -51,7 +51,46 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wTZ-hh-qao" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="975.20000000000005" y="-432.26600985221677"/>
+            <point key="canvasLocation" x="1822" y="-432"/>
+        </scene>
+        <!--Todoer-->
+        <scene sceneID="DaI-gr-Wmr">
+            <objects>
+                <tableViewController id="acp-GN-QG8" customClass="CategoryTableViewController" customModule="Todoer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="RaQ-Oz-Yng">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" id="Oro-ku-xJD">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Oro-ku-xJD" id="NGO-vm-1qg">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="acp-GN-QG8" id="T1a-qf-pHt"/>
+                            <outlet property="delegate" destination="acp-GN-QG8" id="KrE-zN-R9f"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Todoer" id="ghx-Nu-2sf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="hya-oB-YSc">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="acp-GN-QG8" id="9A3-yJ-bTi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="zSO-QD-ZJp" kind="show" identifier="goToItems" id="pGn-Zm-bKB"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Asz-qa-1BE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924" y="-432"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iRq-sq-y7V">
@@ -65,10 +104,13 @@
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                         </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="zSO-QD-ZJp" kind="relationship" relationship="rootViewController" id="7qO-rM-pRH"/>
+                        <segue destination="acp-GN-QG8" kind="relationship" relationship="rootViewController" id="8ht-mt-cKM"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a2n-Vw-kP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -76,4 +118,5 @@
             <point key="canvasLocation" x="32.799999999999997" y="-432.26600985221677"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
 </document>
