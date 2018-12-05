@@ -26,7 +26,7 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodoItemCell" id="e2e-EL-4ox">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="e2e-EL-4ox" customClass="SwipeTableViewCell" customModule="SwipeCellKit">
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e2e-EL-4ox" id="Szt-Aa-Qd8">
@@ -42,12 +42,14 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Items" id="ph6-GE-aba">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="HSU-gg-9nf">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
                                 <action selector="addButtonPressed:" destination="zSO-QD-ZJp" id="25g-Zu-HUW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="itemSearchBar" destination="sga-aO-Asm" id="VrA-aV-eo3"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wTZ-hh-qao" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -62,7 +64,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" id="Oro-ku-xJD">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Oro-ku-xJD" customClass="SwipeTableViewCell" customModule="SwipeCellKit">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Oro-ku-xJD" id="NGO-vm-1qg">
@@ -78,7 +80,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Todoer" id="ghx-Nu-2sf">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="hya-oB-YSc">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
                                 <action selector="addButtonPressed:" destination="acp-GN-QG8" id="9A3-yJ-bTi"/>
                             </connections>
@@ -97,16 +98,9 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0g8-Hn-4th" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fiF-LO-ja3">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="fiF-LO-ja3">
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
-                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -8,20 +8,20 @@
 
 import UIKit
 import RealmSwift
+import Chameleon
 
-class CategoryTableViewController: UITableViewController {
-    
-    let realm = try! Realm()
+class CategoryTableViewController: SwipeTableViewController {
 
-    var categoriesArray: Results<Category>? {
-        didSet {
-            self.tableView.reloadData()
-        }
+    let db = LocalDB.shared
+
+    var categories: Results<Category>? {
+        didSet { self.tableView.reloadData() }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadCategories()
+        self.updateNavBar(withHexCode: "1D9BF6")
     }
 
     // MARK: - Add new category
@@ -33,7 +33,7 @@ class CategoryTableViewController: UITableViewController {
         let action = UIAlertAction(title: "Add category", style: .default) { action in
             let newCategory = Category()
             newCategory.name = textField.text!
-
+            newCategory.backgroundColor = UIColor.randomFlat().hexValue()
             self.save(category: newCategory)
         }
         
@@ -49,14 +49,21 @@ class CategoryTableViewController: UITableViewController {
     
     // MARK: - TableView Datasource methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categoriesArray?.count ?? 1
+        return categories?.count ?? 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
-        cell.textLabel?.text = categoriesArray?[indexPath.row].name ?? "No Categories added yet"
+        cell.textLabel?.text = categories?[indexPath.row].name ?? "No Categories added yet"
         cell.accessoryType = .disclosureIndicator
+        
+        if let category = categories?[indexPath.row] {
+            guard let categoryColour = UIColor(hexString: category.backgroundColor) else { fatalError() }
+            cell.backgroundColor = categoryColour
+            cell.textLabel?.textColor = ContrastColorOf(categoryColour, returnFlat: true)
+        }
+
         return cell
     }
     
@@ -71,24 +78,33 @@ class CategoryTableViewController: UITableViewController {
         let destinationVC = segue.destination as! TodoTableViewController
         
         if let indexPath = tableView.indexPathForSelectedRow {
-            destinationVC.selectedCategory = categoriesArray?[indexPath.row]
+            destinationVC.selectedCategory = categories?[indexPath.row]
         }
     }
     
     // MARK: - Data manipulation methods
     func save(category: Category) {
         do {
-            try realm.write {
-                realm.add(category)
-            }
+            try db.createCategory(category)
         } catch {
             print("Error saving category to context \(error)")
         }
-        
         self.tableView.reloadData()
     }
 
     func loadCategories() {
-        categoriesArray = realm.objects(Category.self)
+        categories = db.getAllCategories()
+    }
+    
+    // MARK: - Delete data from swipe
+    override func updateModel(at indexPath: IndexPath) {
+        super.updateModel(at: indexPath)
+        if let categoryForDeletion = self.categories?[indexPath.row] {
+            do {
+                try db.deleteCategory(categoryForDeletion)
+            } catch {
+                print("Error deleting category \(error)")
+            }
+        }
     }
 }

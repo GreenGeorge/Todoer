@@ -9,23 +9,27 @@
 /* Begin PBXBuildFile section */
 		9B16E09821B297D200B800DC /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B16E09621B297D200B800DC /* RealmSwift.framework */; };
 		9B16E09921B297D200B800DC /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B16E09721B297D200B800DC /* Realm.framework */; };
-		9B16E0A621B29B3A00B800DC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16E0A521B29B3A00B800DC /* Item.swift */; };
+		9B16E0A621B29B3A00B800DC /* RealmItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16E0A521B29B3A00B800DC /* RealmItem.swift */; };
 		9B16E0A821B29B4000B800DC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16E0A721B29B4000B800DC /* Category.swift */; };
 		9B16E0AA21B36F0000B800DC /* SwipeCellKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B16E0A921B36F0000B800DC /* SwipeCellKit.framework */; };
+		9B16E0AE21B374AC00B800DC /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16E0AD21B374AC00B800DC /* SwipeTableViewController.swift */; };
 		9B6E793921AED20100A888BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6E793821AED20100A888BA /* AppDelegate.swift */; };
 		9B6E793B21AED20100A888BA /* TodoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6E793A21AED20100A888BA /* TodoTableViewController.swift */; };
 		9B6E793E21AED20100A888BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6E793C21AED20100A888BA /* Main.storyboard */; };
 		9B6E794321AED20300A888BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B6E794221AED20300A888BA /* Assets.xcassets */; };
 		9B6E794621AED20300A888BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6E794421AED20300A888BA /* LaunchScreen.storyboard */; };
+		9B885F2C21B3C21C00E0307A /* Chameleon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B885F2B21B3C21C00E0307A /* Chameleon.framework */; };
+		9B885F2F21B41B4300E0307A /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B885F2E21B41B4300E0307A /* DataSource.swift */; };
 		9BC09D4F21B24B7B00272AF5 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC09D4E21B24B7B00272AF5 /* CategoryTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9B16E09621B297D200B800DC /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		9B16E09721B297D200B800DC /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
-		9B16E0A521B29B3A00B800DC /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		9B16E0A521B29B3A00B800DC /* RealmItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmItem.swift; sourceTree = "<group>"; };
 		9B16E0A721B29B4000B800DC /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		9B16E0A921B36F0000B800DC /* SwipeCellKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwipeCellKit.framework; path = Carthage/Build/iOS/SwipeCellKit.framework; sourceTree = "<group>"; };
+		9B16E0AD21B374AC00B800DC /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		9B6E793521AED20100A888BA /* Todoer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todoer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6E793821AED20100A888BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B6E793A21AED20100A888BA /* TodoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewController.swift; sourceTree = "<group>"; };
@@ -33,6 +37,8 @@
 		9B6E794221AED20300A888BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B6E794521AED20300A888BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B6E794721AED20300A888BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B885F2B21B3C21C00E0307A /* Chameleon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chameleon.framework; path = Carthage/Build/iOS/Chameleon.framework; sourceTree = "<group>"; };
+		9B885F2E21B41B4300E0307A /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		9BC09D4E21B24B7B00272AF5 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -41,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B885F2C21B3C21C00E0307A /* Chameleon.framework in Frameworks */,
 				9B16E0AA21B36F0000B800DC /* SwipeCellKit.framework in Frameworks */,
 				9B16E09821B297D200B800DC /* RealmSwift.framework in Frameworks */,
 				9B16E09921B297D200B800DC /* Realm.framework in Frameworks */,
@@ -53,6 +60,7 @@
 		282920995AB4F528B7C24BB0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9B885F2B21B3C21C00E0307A /* Chameleon.framework */,
 				9B16E0A921B36F0000B800DC /* SwipeCellKit.framework */,
 				9B16E09721B297D200B800DC /* Realm.framework */,
 				9B16E09621B297D200B800DC /* RealmSwift.framework */,
@@ -84,18 +92,27 @@
 				9B6E794221AED20300A888BA /* Assets.xcassets */,
 				9B6E794421AED20300A888BA /* LaunchScreen.storyboard */,
 				9B6E794721AED20300A888BA /* Info.plist */,
+				9BC09D4B21B1000600272AF5 /* Data Model */,
 				9BC09D4D21B1002400272AF5 /* View */,
 				9BC09D4C21B1001600272AF5 /* Controllers */,
-				9BC09D4B21B1000600272AF5 /* Data Model */,
+				9B885F2D21B419E700E0307A /* Services */,
 			);
 			path = Todoer;
+			sourceTree = "<group>";
+		};
+		9B885F2D21B419E700E0307A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9B885F2E21B41B4300E0307A /* DataSource.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		9BC09D4B21B1000600272AF5 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
 				9B16E0A721B29B4000B800DC /* Category.swift */,
-				9B16E0A521B29B3A00B800DC /* Item.swift */,
+				9B16E0A521B29B3A00B800DC /* RealmItem.swift */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -105,6 +122,7 @@
 			children = (
 				9BC09D4E21B24B7B00272AF5 /* CategoryTableViewController.swift */,
 				9B6E793A21AED20100A888BA /* TodoTableViewController.swift */,
+				9B16E0AD21B374AC00B800DC /* SwipeTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -196,6 +214,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwipeCellKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Chameleon.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -212,10 +231,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B16E0A621B29B3A00B800DC /* Item.swift in Sources */,
+				9B885F2F21B41B4300E0307A /* DataSource.swift in Sources */,
+				9B16E0A621B29B3A00B800DC /* RealmItem.swift in Sources */,
 				9B6E793B21AED20100A888BA /* TodoTableViewController.swift in Sources */,
 				9B6E793921AED20100A888BA /* AppDelegate.swift in Sources */,
 				9BC09D4F21B24B7B00272AF5 /* CategoryTableViewController.swift in Sources */,
+				9B16E0AE21B374AC00B800DC /* SwipeTableViewController.swift in Sources */,
 				9B16E0A821B29B4000B800DC /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

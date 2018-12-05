@@ -9,7 +9,13 @@
 import Foundation
 import RealmSwift
 
-class RealmItem: Object {
+//protocol Item {
+//    var title: String { get set }
+//    var done: Bool { get set }
+//    var dateCreated: Date? { get set }
+//}
+
+class Item: Object {
     @objc dynamic var title: String = ""
     @objc dynamic var done: Bool = false
     @objc dynamic var dateCreated: Date?
